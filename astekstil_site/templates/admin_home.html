@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <h1>Ürün Listesi</h1>
+        {% if products %}
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>İngilizce Ürün Adı</th>
+                        <th>Fransızca Ürün Adı</th>
+                        <th>İngilizce Ürün Rengi</th>
+                        <th>Fransızca Ürün Rengi</th>
+                        <th>Ürün Fotoğrafı</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.english_product_name }}</td>
+                            <td>{{ product.french_product_name }}</td>
+                            <td>{{ product.english_product_color }}</td>
+                            <td>{{ product.french_product_color }}</td>
+                            <td><img src="{% static 'images/' %}{{ product.product_image }}" alt="{{ product.english_product_name }}"
+                                class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;"></td>
+                            <td>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-primary">Düzenle</a>
+                                <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Ürün bulunamadı</p>
+        {% endif %}
+    </div>
+{% endblock %}

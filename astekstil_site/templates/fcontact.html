@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+  
+    <title>
+      AŞ Tekstil
+    </title>
+  
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <span>
+            AŞ Tekstil
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse innerpage_navbar" id="navbarSupportedContent">
+          <ul class="navbar-nav  ">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'fhome' %}">D'accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'fproducts' %}">
+                Des Produits
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'faboutus' %}">
+                À Propos de Nous
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'fcontact' %}">Contactez-nous</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+
+  </div>
+  <!-- end hero area -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container px-0">
+      <div class="heading_container ">
+        <h2 class="">
+          CONTACTEZ-NOUS
+        </h2>
+      </div>
+    </div>
+    <div class="container container-bg">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map-responsive">
+              <iframe src="https://maps.google.com/maps?q=Y%C4%B1ld%C4%B1ztepe,%2037/17B%20Sk.%2011-1,%2034203%20Ba%C4%9Fc%C4%B1lar/%C4%B0stanbul&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-5 px-0" style="display: flex; justify-content: center; align-items: center;">
+          <div class="info_link-box" style="text-align: center;">
+            <div class="info_item">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span style="font-size: 18px; display: block; margin-bottom: 10px;">Yıldıztepe, 37/17B Sk. 11-1<br>34203 Bağcılar/İstanbul</span>
+            </div>
+            <div class="info_item">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span style="font-size: 18px; display: block; margin-bottom: 10px;">+90 535 310 79 82</span>
+            </div>
+            <div class="info_item">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span style="font-size: 18px; display: block;">as-tekstil@hotmail.com</span>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+<!-- info section -->
+
+<section class="info_section  layout_padding2-top">
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              À PROPOS DE NOUS
+            </h6>
+            <p>
+              Nous sommes spécialisés dans la confection d’uniformes scolaires de qualité qui allient style et durabilité. Notre priorité est de créer des vêtements confortables qui favorisent l’esprit scolaire et l’unité entre les élèves.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              CONTACTEZ-NOUS
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Yıldıztepe, 37/17B Sk. 11-1, 34203 Bağcılar/İstanbul </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>+90 535 310 79 82</span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span> as-tekstil@hotmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+    <footer class=" footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> Tous droits réservés par Aş-Tekstil
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  
+  </section>
+  
+  <!-- end info section -->
+  
+  
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  
+  </body>
+  
+  </html>

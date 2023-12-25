@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container mt-5">
+        <h1>Ürün Ekle</h1>
+        <form method='POST' action="" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="form-group m-3">
+              <label>İngilizce Ürün Adı</label>
+              <input required name="english_product_name" type="text" placeholder="İngilizce ürün adı"
+                  class="form-control">
+          </div>
+
+          <div class="form-group m-3">
+            <label>Fransızca Ürün Adı</label>
+            <input required name="french_product_name" type="text" placeholder="Fransızca ürün adı"
+                class="form-control">
+          </div>
+
+          <div class="form-group m-3">
+              <label>İngilizce Renk Seçin</label>
+              <select name="english_product_color" class="form-control">
+                  <option value='none'>İngilizce renk seç...</option>
+
+                  {% for color in english_colors %}
+                  <option value='{{color.id}}'>{{color.name}}</option>
+                  {% endfor %}
+              </select>
+          </div>
+
+
+          <div class="form-group m-3">
+              <label>Yeni İngilizce Renk Oluştur</label>
+              <input name="new_english_product_color" type="text" placeholder="Yeni İngilizce Renk Oluştur"
+                  class="form-control">
+          </div>
+
+          <div class="form-group m-3">
+            <label>Fransızca Renk Seçin</label>
+            <select name="french_product_color" class="form-control">
+                <option value='none'>Fransızca renk seç...</option>
+
+                {% for color in french_colors %}
+                <option value='{{color.id}}'>{{color.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="form-group m-3">
+            <label>Yeni Fransızca Renk Oluştur</label>
+            <input name="new_french_product_color" type="text" placeholder="Yeni Fransızca Renk Oluştur"
+                class="form-control">
+        </div>
+
+          <div class="form-group m-3">
+              <label>Resim Yükle</label>
+              <input required name="product_image" type="file" multiple class="form-control-file">
+          </div>
+
+          <button type='submit' class="btn btn-primary m-3">Kaydet</button>
+
+        </form>
+        <a href="{% url 'admin_home' %}" class="btn btn-dark my-3">Geri Git</a>
+    </div>
+{% endblock %}
