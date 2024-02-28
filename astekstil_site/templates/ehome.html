@@ -35,6 +35,20 @@
         /* Add any other desired styles */
       }
     </style>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+  .swiper-container {
+    width: 100%;
+    max-width: 1200px; /* Set your preferred maximum width */
+    margin: auto;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    max-height: 400px; /* Set your preferred maximum height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+</style>
   </head>
 
 <body>
@@ -148,16 +162,24 @@
       </div>
     </div>
   </div>
+<br>
 </section>
 <!-- End video section -->
-
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="{% static 'images/astekstilfoto1.jpg' %}" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="{% static 'images/astekstilfoto2.jpg' %}" alt="Image 2"></div>
+    </div>
 
   <!-- shop section -->
 
   <section class="shop_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>
+        <div id="player"></div>
+        <br>
+	<h2>
           Products
         </h2>
       </div>
@@ -450,7 +472,47 @@
       });
     });
   </script>
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script>
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '315',
+      width: '560',
+      videoId: '4LSxYaZtTgs', // Replace with your actual video ID
+      playerVars: {
+        loop: 1,           // Set loop to 1 to enable looping
+        autoplay: 1,       // Set autoplay to 1 to automatically play the video
+        controls: 0,        // Set controls to 0 to hide the player controls
+        mute: 1            // Set mute to 1 to disable sound
+      },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
 
+  function onPlayerReady(event) {
+    event.target.playVideo();
+  }
+</script>
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+  </script>
 </body>
 
 </html>
